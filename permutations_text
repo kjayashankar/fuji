@@ -1,0 +1,36 @@
+1 minute to have a one function
+
+List<String>list;
+
+List<String> allPerms(String input){
+
+	list = new ArrayList<String>();
+	getPermumtations("",input);	
+	return list;
+}
+
+String getPermutations(String a, String rest){
+	if(rest == ''){
+		list.add( a);
+	}
+	else{
+		int len = rest.length();
+		for(int index = 0 ; index < len ; index++){
+			char temp = rest.charAt(index);
+			a += temp;
+			rest = temp.substring(0,index)+temp.substring(index+1,len);
+			getPermutations(a,rest);
+			}
+		}
+}
+
+
+	
+jay
+jya
+ajy
+ayj
+yja
+yaj	
+	
+
